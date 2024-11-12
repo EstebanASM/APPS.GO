@@ -1,14 +1,11 @@
-package main
+package handler
 
 import (
 	"fmt"
 	"net/http"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hola soy Esteban y este es el deber es de programacion distribuida con el lenguaje go")
-}
-func main() {
-	http.HandleFunc("/", handler)
-	http.ListenAndServe(":8086", nil)
+// Esta es la función exportada que Vercel invocará
+func Handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Hola soy Esteban y este es el deber de programación distribuida con el lenguaje Go")
 }
